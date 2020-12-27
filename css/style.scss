@@ -1,0 +1,64 @@
+@font-face {
+    font-family: Open Dyslexic Regular;
+    src: url(../font/OpenDyslexic-Regular.otf);
+}
+
+body{
+    font-family: 'Open Dyslexic Regular', sans-serif;
+    .btn{
+        &.btn-rounded{
+            border-radius: 25px;
+        }
+    }
+
+    
+    .github-corner:hover .octo-arm{
+        animation:octocat-wave 560ms ease-in-out
+    }
+
+    @keyframes octocat-wave{
+        0%,100%{
+            transform:rotate(0)
+        }
+        20%,60%{
+            transform:rotate(-25deg)
+        }
+        40%,80%{
+            transform:rotate(10deg)
+        }
+    }
+    
+    @media (max-width:500px){
+        .github-corner:hover .octo-arm{
+            animation:none
+        }
+        
+        .github-corner .octo-arm{
+            animation:octocat-wave 560ms ease-in-out
+        }
+    }
+
+    #home{
+        min-height: 100vh;
+        .display-1{
+            color: #0094FF;
+        }
+    }
+
+    #about{
+        background-color: #EFF8FF;
+        a{
+            text-decoration: none;
+        }
+    }
+
+    footer{
+        background: #151513;
+        color: #FFFFFF;
+        a{
+            color: #FFFFFF;
+            text-decoration: none;
+        }
+    }
+    
+}

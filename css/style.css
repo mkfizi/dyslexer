@@ -1,0 +1,85 @@
+@font-face {
+  font-family: Open Dyslexic Regular;
+  src: url(../font/OpenDyslexic-Regular.otf);
+}
+
+body {
+  font-family: 'Open Dyslexic Regular', sans-serif;
+}
+
+body .btn.btn-rounded {
+  border-radius: 25px;
+}
+
+body .github-corner:hover .octo-arm {
+  -webkit-animation: octocat-wave 560ms ease-in-out;
+          animation: octocat-wave 560ms ease-in-out;
+}
+
+@-webkit-keyframes octocat-wave {
+  0%, 100% {
+    -webkit-transform: rotate(0);
+            transform: rotate(0);
+  }
+  20%, 60% {
+    -webkit-transform: rotate(-25deg);
+            transform: rotate(-25deg);
+  }
+  40%, 80% {
+    -webkit-transform: rotate(10deg);
+            transform: rotate(10deg);
+  }
+}
+
+@keyframes octocat-wave {
+  0%, 100% {
+    -webkit-transform: rotate(0);
+            transform: rotate(0);
+  }
+  20%, 60% {
+    -webkit-transform: rotate(-25deg);
+            transform: rotate(-25deg);
+  }
+  40%, 80% {
+    -webkit-transform: rotate(10deg);
+            transform: rotate(10deg);
+  }
+}
+
+@media (max-width: 500px) {
+  body .github-corner:hover .octo-arm {
+    -webkit-animation: none;
+            animation: none;
+  }
+  body .github-corner .octo-arm {
+    -webkit-animation: octocat-wave 560ms ease-in-out;
+            animation: octocat-wave 560ms ease-in-out;
+  }
+}
+
+body #home {
+  min-height: 100vh;
+}
+
+body #home .display-1 {
+  color: #0094FF;
+}
+
+body #about {
+  background-color: #EFF8FF;
+}
+
+body #about a {
+  text-decoration: none;
+}
+
+body footer {
+  background: #151513;
+  color: #FFFFFF;
+}
+
+body footer a {
+  color: #FFFFFF;
+  text-decoration: none;
+}
+/*# sourceMappingURL=style.css.map */
