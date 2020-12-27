@@ -73,6 +73,16 @@ body #about a {
   text-decoration: none;
 }
 
+body .menu .input-color {
+  border-radius: 2px;
+  width: 35px;
+}
+
+body .menu .btn-menu {
+  width: 35px;
+  padding: 5px;
+}
+
 body footer {
   background: #151513;
   color: #FFFFFF;
