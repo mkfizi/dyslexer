@@ -64,6 +64,7 @@ html body .github-corner:hover .octo-arm {
 
 html body #home {
   min-height: 100vh;
+  background-color: #F9FCFF;
 }
 
 html body #home .display-1 {
@@ -79,7 +80,7 @@ html body #about a {
 }
 
 html body #navbar {
-  background-color: #F9F9F9;
+  background-color: #EFF8FF;
   z-index: 500;
   height: 55px;
 }
@@ -103,11 +104,14 @@ html body #bar {
   background-color: #C0C0C0;
   height: 40px;
   z-index: 300;
+  width: 100%;
+  opacity: 0.25;
 }
 
 html body #setting {
   right: 15px;
   bottom: 15px;
+  z-index: 400;
 }
 
 html body #setting .input-color {
@@ -145,6 +149,7 @@ html body #display .text-input {
   border: none;
   resize: none;
   padding: 15px;
+  background-color: #F9FCFF;
 }
 
 html body #display .text-input:focus {

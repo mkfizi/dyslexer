@@ -20,20 +20,23 @@
         <title>Dyslexer - Text</title>
     </head>
     <body>
+        <div id="bar" class="position-absolute"></div>
         <nav id="navbar" class="navbar container-fluid border-bottom position-relative">     
             <a href="index.html"><img src="img/logo-sm.png" alt="" class="float-left"></a>
             <div>
-                <button id="btn-paste" type="button mx-3" class="btn btn-primary">
-                    Paste
+                <button id="btn-clear" type="button" class="btn btn-primary  mx-3">
+                    clear
                 </button>
                 <button id="btn-setting" class="btn-setting">
                     <i class="fas fa-ellipsis-v"></i>
                 </button>
             </div>
         </nav>
+        
 
         <div id="setting" class="position-absolute">
-            <input id="input-color" type="color" class="input-color mb-3" name="text-color" value="#ff0000"><br>
+            <input id="input-color" type="color" class="input-color mb-3" name="text-color" value="#C0C0C0">
+            <br>
             <div class="btn-group-vertical" role="group" aria-label="Button">
                 <button id="btn-increase" type="button" class="btn btn-outline-primary btn-menu">
                     A<i class="fas fa-long-arrow-alt-up"></i>
@@ -43,8 +46,6 @@
                 </button>
             </div>
         </div>
-
-        <div id="bar" class="position-absolute"></div>
 
         <div id="display">
             <textarea id="text-display" type="text" class="text-input w-100" placeholder="Write text here"></textarea>
