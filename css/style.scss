@@ -3,73 +3,140 @@
     src: url(../font/OpenDyslexic-Regular.otf);
 }
 
-body{
-    font-family: 'Open Dyslexic Regular', sans-serif;
-    .btn{
-        &.btn-rounded{
-            border-radius: 25px;
-        }
-    }
+html{
+    height: 100%;
 
-    
-    .github-corner:hover .octo-arm{
-        animation:octocat-wave 560ms ease-in-out
-    }
-
-    @keyframes octocat-wave{
-        0%,100%{
-            transform:rotate(0)
-        }
-        20%,60%{
-            transform:rotate(-25deg)
-        }
-        40%,80%{
-            transform:rotate(10deg)
-        }
-    }
-    
-    @media (max-width:500px){
-        .github-corner:hover .octo-arm{
-            animation:none
-        }
+    body{
+        font-family: 'Open Dyslexic Regular', sans-serif;
+        height: 100%;
         
-        .github-corner .octo-arm{
+        .btn{
+            &.btn-rounded{
+                border-radius: 25px;
+            }
+        }
+    
+        
+        .github-corner:hover .octo-arm{
             animation:octocat-wave 560ms ease-in-out
         }
-    }
-
-    #home{
-        min-height: 100vh;
-        .display-1{
-            color: #0094FF;
-        }
-    }
-
-    #about{
-        background-color: #EFF8FF;
-        a{
-            text-decoration: none;
-        }
-    }
-
-    .menu{
-        .input-color{
-            border-radius: 2px;
-            width: 35px;
-        }
-        .btn-menu{
-            width: 35px;
-            padding: 5px;
-        }
-    }
-
-    footer{
-        background: #151513;
-        color: #FFFFFF;
-        a{
-            color: #FFFFFF;
-            text-decoration: none;
-        }
-    }
     
+        @keyframes octocat-wave{
+            0%,100%{
+                transform:rotate(0)
+            }
+            20%,60%{
+                transform:rotate(-25deg)
+            }
+            40%,80%{
+                transform:rotate(10deg)
+            }
+        }
+        
+        @media (max-width:500px){
+            .github-corner:hover .octo-arm{
+                animation:none
+            }
+            
+            .github-corner .octo-arm{
+                animation:octocat-wave 560ms ease-in-out
+            }
+        }
+    
+        #home{
+            min-height: 100vh;
+            .display-1{
+                color: #0094FF;
+            }
+        }
+    
+        #about{
+            background-color: #EFF8FF;
+            a{
+                text-decoration: none;
+            }
+        }
+    
+        #navbar{
+            background-color: #F9F9F9;
+            z-index: 500;
+            height: 55px;
+
+            .btn-setting{
+                background: none;
+                color: #0094FF;
+                border: none;
+                border-radius: 5px;
+
+                &:focus{
+                    outline: 0;
+                    box-shadow: 0 0 0 0.25rem rgba(130,138,145,.5);
+                    border-color: #565e64;
+                    box-shadow: 0 0 0 0.25rem rgba(130,138,145,.5);
+                }
+            }
+        }
+    
+        #bar{
+            background-color: #C0C0C0;
+            height: 40px;
+            z-index: 300;
+        }
+    
+        #setting{
+            right: 15px;
+            bottom: 15px;
+            
+            .input-color{
+                border-radius: 5px;
+                width: 35px;
+                height: 35px;
+                background-color: #C0C0C0;
+
+                &:focus{
+                    outline: 0;
+                    box-shadow: 0 0 0 0.25rem rgba(130,138,145,.5);
+                    border-color: #565e64;
+                    box-shadow: 0 0 0 0.25rem rgba(130,138,145,.5);
+                }
+            }
+    
+            .btn-menu{
+                background-color: #FFFFFF;
+                width: 35px;
+                padding: 5px;
+    
+                &:hover{
+                    background-color: #0A58CA;
+                }
+            }
+        }
+    
+        #display{
+            height: calc(100% - 55px);
+    
+            .text-input{
+                height: 100%;
+                overflow-y: auto;
+                border: none;
+                resize: none;
+                padding: 15px;
+
+                &:focus{
+                    outline-width: 0;
+                }
+            }
+        }
+    
+        footer{
+            background: #151513;
+            color: #FFFFFF;
+            a{
+                color: #FFFFFF;
+                text-decoration: none;
+            }
+        }
+        
+    }    
 }
+

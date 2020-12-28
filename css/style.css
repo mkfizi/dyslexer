@@ -3,15 +3,20 @@
   src: url(../font/OpenDyslexic-Regular.otf);
 }
 
-body {
-  font-family: 'Open Dyslexic Regular', sans-serif;
+html {
+  height: 100%;
 }
 
-body .btn.btn-rounded {
+html body {
+  font-family: 'Open Dyslexic Regular', sans-serif;
+  height: 100%;
+}
+
+html body .btn.btn-rounded {
   border-radius: 25px;
 }
 
-body .github-corner:hover .octo-arm {
+html body .github-corner:hover .octo-arm {
   -webkit-animation: octocat-wave 560ms ease-in-out;
           animation: octocat-wave 560ms ease-in-out;
 }
@@ -47,48 +52,111 @@ body .github-corner:hover .octo-arm {
 }
 
 @media (max-width: 500px) {
-  body .github-corner:hover .octo-arm {
+  html body .github-corner:hover .octo-arm {
     -webkit-animation: none;
             animation: none;
   }
-  body .github-corner .octo-arm {
+  html body .github-corner .octo-arm {
     -webkit-animation: octocat-wave 560ms ease-in-out;
             animation: octocat-wave 560ms ease-in-out;
   }
 }
 
-body #home {
+html body #home {
   min-height: 100vh;
 }
 
-body #home .display-1 {
+html body #home .display-1 {
   color: #0094FF;
 }
 
-body #about {
+html body #about {
   background-color: #EFF8FF;
 }
 
-body #about a {
+html body #about a {
   text-decoration: none;
 }
 
-body .menu .input-color {
-  border-radius: 2px;
-  width: 35px;
+html body #navbar {
+  background-color: #F9F9F9;
+  z-index: 500;
+  height: 55px;
 }
 
-body .menu .btn-menu {
+html body #navbar .btn-setting {
+  background: none;
+  color: #0094FF;
+  border: none;
+  border-radius: 5px;
+}
+
+html body #navbar .btn-setting:focus {
+  outline: 0;
+  -webkit-box-shadow: 0 0 0 0.25rem rgba(130, 138, 145, 0.5);
+          box-shadow: 0 0 0 0.25rem rgba(130, 138, 145, 0.5);
+  border-color: #565e64;
+  box-shadow: 0 0 0 0.25rem rgba(130, 138, 145, 0.5);
+}
+
+html body #bar {
+  background-color: #C0C0C0;
+  height: 40px;
+  z-index: 300;
+}
+
+html body #setting {
+  right: 15px;
+  bottom: 15px;
+}
+
+html body #setting .input-color {
+  border-radius: 5px;
+  width: 35px;
+  height: 35px;
+  background-color: #C0C0C0;
+}
+
+html body #setting .input-color:focus {
+  outline: 0;
+  -webkit-box-shadow: 0 0 0 0.25rem rgba(130, 138, 145, 0.5);
+          box-shadow: 0 0 0 0.25rem rgba(130, 138, 145, 0.5);
+  border-color: #565e64;
+  box-shadow: 0 0 0 0.25rem rgba(130, 138, 145, 0.5);
+}
+
+html body #setting .btn-menu {
+  background-color: #FFFFFF;
   width: 35px;
   padding: 5px;
 }
 
-body footer {
+html body #setting .btn-menu:hover {
+  background-color: #0A58CA;
+}
+
+html body #display {
+  height: calc(100% - 55px);
+}
+
+html body #display .text-input {
+  height: 100%;
+  overflow-y: auto;
+  border: none;
+  resize: none;
+  padding: 15px;
+}
+
+html body #display .text-input:focus {
+  outline-width: 0;
+}
+
+html body footer {
   background: #151513;
   color: #FFFFFF;
 }
 
-body footer a {
+html body footer a {
   color: #FFFFFF;
   text-decoration: none;
 }
