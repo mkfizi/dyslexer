@@ -100,6 +100,10 @@ html body #navbar .btn-setting:focus {
   box-shadow: 0 0 0 0.25rem rgba(130, 138, 145, 0.5);
 }
 
+html body #navbar .input-group {
+  width: 75%;
+}
+
 html body #bar {
   background-color: #C0C0C0;
   height: 40px;
@@ -163,6 +167,18 @@ html body #display .text-input {
 
 html body #display .text-input:focus {
   outline-width: 0;
+}
+
+html body #display .placeholder {
+  height: 100%;
+  background-color: #F9FCFF;
+}
+
+html body #display .web-display {
+  height: 100%;
+  width: 100%;
+  overflow-y: auto;
+  border: none;
 }
 
 html body footer {

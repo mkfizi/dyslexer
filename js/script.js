@@ -1,12 +1,15 @@
 var setting             = document.getElementById("setting");
 var btnClear            = document.getElementById("btn-clear");
+var inputSearch         = document.getElementById("input-search");
+var btnGo               = document.getElementById("btn-go");
 var btnSetting          = document.getElementById("btn-setting");
 var btnOverlay          = document.getElementById("btn-overlay");
-var btnIncrease         = document.getElementById("btn-increase");
-var btnDecrease         = document.getElementById("btn-decrease");
+var btnIncreaseText     = document.getElementById("btn-increase-text");
+var btnDecreaseText     = document.getElementById("btn-decrease-text");
 var bar                 = document.getElementById("bar");
 var inputColor          = document.getElementById("input-color");
 var textDisplay         = document.getElementById("text-display");
+var placeholder         = document.getElementById("placeholder");
 
 var barTop              = bar.offsetTop;
 var barHeight           = bar.offsetHeight;
@@ -59,9 +62,9 @@ function setBtnOverlay(){
 }
 
 //increase/decrease font
-if(btnIncrease != null && btnDecrease != null ){
-    btnIncrease.addEventListener("click", increaseText);
-    btnDecrease.addEventListener("click", decreaseText);
+if(btnIncreaseText != null && btnDecreaseText != null ){
+    btnIncreaseText.addEventListener("click", increaseText);
+    btnDecreaseText.addEventListener("click", decreaseText);
 }
 
 function increaseText(){
@@ -76,7 +79,7 @@ function decreaseText(){
     checkSize(fontSize, barSize);
 }
 
-//check to disable font size increase/decrease button
+//check to disable font size increase/decrease button (TEXT)
 function checkSize(currentSize, barSize){
     var maxTextSize         = 32;
     var minTextSize         = 12;
@@ -84,12 +87,12 @@ function checkSize(currentSize, barSize){
     bar.style.height            = barSize + "px";
 
     if(currentSize == maxTextSize){
-        btnIncrease.disabled = true;
+        btnIncreaseText.disabled = true;
     }else if(currentSize == minTextSize){
-        btnDecrease.disabled = true;
+        btnDecreaseText.disabled = true;
     }else{
-        btnIncrease.disabled = false;
-        btnDecrease.disabled = false;
+        btnIncreaseText.disabled = false;
+        btnDecreaseText.disabled = false;
     }
 }
 
@@ -148,3 +151,22 @@ if(btnClear != null){
 function clearInput(){
     textDisplay.value = "";
 }
+
+if(btnGo != null){
+    btnGo.addEventListener("click", setURL);
+} 
+
+function setURL(){
+    // var webURL = 
+}
+
+//check URL
+function validURL(str) {
+    var pattern = new RegExp('^(https?:\\/\\/)?'+ // protocol
+      '((([a-z\\d]([a-z\\d-]*[a-z\\d])*)\\.)+[a-z]{2,}|'+ // domain name
+      '((\\d{1,3}\\.){3}\\d{1,3}))'+ // OR ip (v4) address
+      '(\\:\\d+)?(\\/[-a-z\\d%_.~+]*)*'+ // port and path
+      '(\\?[;&a-z\\d%_.~+=-]*)?'+ // query string
+      '(\\#[-a-z\\d_]*)?$','i'); // fragment locator
+    return !!pattern.test(str);
+  }
