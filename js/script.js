@@ -1,6 +1,7 @@
 var setting             = document.getElementById("setting");
-var btnSetting          = document.getElementById("btn-setting");
 var btnClear            = document.getElementById("btn-clear");
+var btnSetting          = document.getElementById("btn-setting");
+var btnOverlay          = document.getElementById("btn-overlay");
 var btnIncrease         = document.getElementById("btn-increase");
 var btnDecrease         = document.getElementById("btn-decrease");
 var bar                 = document.getElementById("bar");
@@ -11,6 +12,7 @@ var barTop              = bar.offsetTop;
 var barHeight           = bar.offsetHeight;
 
 var settingCondition    = true;
+var overlayCondition    = true;
 var fontSize            = 16;
 var barSize             = 40;
 var cursorY             = null;
@@ -34,6 +36,25 @@ function setBtnSetting(){
         setting.style.display       = "block";
         btnSetting.style.color      = "#0094FF";
         settingCondition            = true;
+    }
+}
+
+//hide/display overlay color selection
+if(btnOverlay != null){
+    btnOverlay.addEventListener("click", setBtnOverlay);
+}
+
+function setBtnOverlay(){
+    if(overlayCondition){   //if button is clicked
+        btnOverlay.style.color      = "#C1C1C1";
+        overlayCondition            = false;
+        inputColor.disabled         = true;
+        bar.style.display           = "none";
+    }else{                  //if button is not clicked
+        btnOverlay.style.color      = "#0094FF";
+        overlayCondition            = true;
+        inputColor.disabled         = false;
+        bar.style.display           = "block";
     }
 }
 
@@ -99,7 +120,6 @@ function getMousePosition(mouseEvent){
             bar.style.top = cursorY - (barHeight / 2) + "px";
         }
     }
-    console.log( window.innerHeight + " == " +(cursorY + barHeight /2));
 }
 
 //trigger click on input text         

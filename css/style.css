@@ -114,11 +114,20 @@ html body #setting {
   z-index: 400;
 }
 
+html body #setting #btn-overlay {
+  background-color: transparent;
+  font-size: 20px;
+  color: #0094FF;
+  outline: none;
+  border: none;
+}
+
 html body #setting .input-color {
   border-radius: 5px;
   width: 35px;
   height: 35px;
   background-color: #C0C0C0;
+  cursor: pointer;
 }
 
 html body #setting .input-color:focus {

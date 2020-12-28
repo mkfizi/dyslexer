@@ -91,12 +91,21 @@ html{
             bottom  : 15px;
             z-index : 400;
             
+            #btn-overlay{
+                background-color    : transparent;
+                font-size           : 20px;
+                color               : #0094FF;
+                outline             : none;
+                border              : none;
+            }
+
             .input-color{
                 border-radius       : 5px;
                 width               : 35px;
                 height              : 35px;
                 background-color    : #C0C0C0;
-
+                cursor              : pointer;
+                
                 &:focus{
                     outline         : 0;
                     box-shadow      : 0 0 0 0.25rem rgba(130,138,145,.5);
