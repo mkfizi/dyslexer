@@ -6,18 +6,19 @@ var btnSetting          = document.getElementById("btn-setting");
 var btnOverlay          = document.getElementById("btn-overlay");
 var btnIncreaseText     = document.getElementById("btn-increase-text");
 var btnDecreaseText     = document.getElementById("btn-decrease-text");
-var bar                 = document.getElementById("bar");
+var readbar             = document.getElementById("readbar");
 var inputColor          = document.getElementById("input-color");
 var textDisplay         = document.getElementById("text-display");
 var placeholder         = document.getElementById("placeholder");
 
-var barTop              = bar.offsetTop;
-var barHeight           = bar.offsetHeight;
+var readbarTop          = readbar.offsetTop;
+var readbarHeight       = readbar.offsetHeight;
 
 var settingCondition    = true;
 var overlayCondition    = true;
 var fontSize            = 16;
-var barSize             = 40;
+var readbarSize         = 40;
+var readbarTop          = 0;
 var cursorY             = null;
 
 //set default fontSize for display
@@ -52,12 +53,13 @@ function setBtnOverlay(){
         btnOverlay.style.color      = "#C1C1C1";
         overlayCondition            = false;
         inputColor.disabled         = true;
-        bar.style.display           = "none";
+        readbar.style.display       = "none";
+
     }else{                  //if button is not clicked
         btnOverlay.style.color      = "#0094FF";
         overlayCondition            = true;
         inputColor.disabled         = false;
-        bar.style.display           = "block";
+        readbar.style.display       = "block";
     }
 }
 
@@ -68,23 +70,26 @@ if(btnIncreaseText != null && btnDecreaseText != null ){
 }
 
 function increaseText(){
-    fontSize = fontSize + 4;
-    barSize = barSize + 4;
-    checkSize(fontSize, barSize);
+    fontSize    = fontSize + 4;
+    readbarSize = readbarSize + 4;
+    readbarTop  = readbarTop - 4;
+    checkSize(fontSize, readbarSize);
 }
 
 function decreaseText(){
-    fontSize = fontSize - 4;
-    barSize = barSize - 4;
-    checkSize(fontSize, barSize);
+    fontSize    = fontSize - 4;
+    readbarSize = readbarSize - 4;
+    readbarTop  = readbarTop + 4;
+    checkSize(fontSize, readbarSize, readbarTop);
 }
 
 //check to disable font size increase/decrease button (TEXT)
-function checkSize(currentSize, barSize){
+function checkSize(currentSize, readbarSize, readbarTop){
     var maxTextSize         = 32;
     var minTextSize         = 12;
     textDisplay.style.fontSize  = currentSize + "px";
-    bar.style.height            = barSize + "px";
+    readbar.style.height        = readbarSize + "px";
+    readbar.style.top           = readbarTop + "px";
 
     if(currentSize == maxTextSize){
         btnIncreaseText.disabled = true;
@@ -96,20 +101,20 @@ function checkSize(currentSize, barSize){
     }
 }
 
-//change bar color
+//change readbar color
 if(inputColor != null){
     inputColor.addEventListener("click", timerColor);
 }
 
 function setColor(){
-    bar.style.backgroundColor = inputColor.value;
+    readbar.style.backgroundColor = inputColor.value;
 }
 
 var timerColor = setInterval(function(){ 
                         setColor(); 
                     }, 100  );
 
-//bar movement                    
+//readbar movement                    
 document.body.addEventListener("mousemove", getMousePosition);
 
 function getMousePosition(mouseEvent){
@@ -118,29 +123,11 @@ function getMousePosition(mouseEvent){
     }else{              //IE
         cursorY = window.event.pageY;
     }
-    if(bar != null){
-        if((cursorY + barHeight /2) <= window.innerHeight){
-            bar.style.top = cursorY - (barHeight / 2) + "px";
+    if(readbar != null){
+        if((cursorY + readbarHeight /2) - readbarTop <= window.innerHeight){
+            readbar.style.top = cursorY - (readbarHeight / 2) + "px";
         }
     }
-}
-
-//trigger click on input text         
-if(bar != null){
-    bar.addEventListener("click", focusInput);
-} 
-
-function focusInput(){
-    textDisplay.focus();
-}
-
-//trigger click on input text         
-if(bar != null){
-    bar.addEventListener("click", focusInput);
-} 
-
-function focusInput(){
-    textDisplay.focus();
 }
 
 //trigger clear input text         
@@ -152,12 +139,21 @@ function clearInput(){
     textDisplay.value = "";
 }
 
+//set iframe
 if(btnGo != null){
     btnGo.addEventListener("click", setURL);
 } 
 
 function setURL(){
-    // var webURL = 
+    var webURL      = inputSearch.value;
+    var checkURL    = validURL(webURL);
+
+    if(checkURL){
+        console.log("Yea");
+    }else{
+        
+        console.log("fuk");
+    }
 }
 
 //check URL

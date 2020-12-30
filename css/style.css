@@ -10,6 +10,7 @@ html {
 html body {
   font-family: 'Open Dyslexic Regular', sans-serif;
   height: 100%;
+  background-color: #F9FCFF;
 }
 
 html body .btn.btn-rounded {
@@ -104,10 +105,10 @@ html body #navbar .input-group {
   width: 75%;
 }
 
-html body #bar {
+html body #readbar {
   background-color: #C0C0C0;
   height: 40px;
-  z-index: 300;
+  z-index: 200;
   width: 100%;
   opacity: 0.25;
 }
@@ -154,6 +155,8 @@ html body #setting .btn-menu:hover {
 
 html body #display {
   height: calc(100% - 55px);
+  background-color: transparent;
+  z-index: 300;
 }
 
 html body #display .text-input {
@@ -162,7 +165,7 @@ html body #display .text-input {
   border: none;
   resize: none;
   padding: 15px;
-  background-color: #F9FCFF;
+  background-color: transparent;
 }
 
 html body #display .text-input:focus {

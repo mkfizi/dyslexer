@@ -9,6 +9,7 @@ html{
     body{
         font-family : 'Open Dyslexic Regular', sans-serif;
         height      : 100%;
+        background-color    : #F9FCFF;
         
         .btn{
             &.btn-rounded{
@@ -82,12 +83,12 @@ html{
             }
         }
     
-        #bar{
+        #readbar{
             background-color    : #C0C0C0;
             height              : 40px;
-            z-index             : 300;
+            z-index             : 200;
             width               : 100%;
-            opacity             : 0.25;;
+            opacity             : 0.25;
         }
     
         #setting{
@@ -130,7 +131,9 @@ html{
         }
 
         #display{
-            height : calc(100% - 55px);
+            height              : calc(100% - 55px);
+            background-color    : transparent;
+            z-index: 300;
     
             .text-input{
                 height              : 100%;
@@ -138,7 +141,7 @@ html{
                 border              : none;
                 resize              : none;
                 padding             : 15px;
-                background-color    : #F9FCFF;
+                background-color    : transparent;
 
                 &:focus{
                     outline-width : 0;
