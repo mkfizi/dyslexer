@@ -11,15 +11,19 @@ var inputColor          = document.getElementById("input-color");
 var textDisplay         = document.getElementById("text-display");
 var placeholder         = document.getElementById("placeholder");
 
-var readbarTop          = readbar.offsetTop;
-var readbarHeight       = readbar.offsetHeight;
+if(readbar != null){
+    var readbarTop          = readbar.offsetTop;
+    var readbarHeight       = readbar.offsetHeight;
+}
 
 var settingCondition    = true;
 var overlayCondition    = true;
+var changePage          = false;
 var fontSize            = 16;
 var readbarSize         = 40;
 var readbarTop          = 0;
-var cursorY             = null;
+// var cursorY             = null;
+// var cursorX             = null;
 
 //set default fontSize for display
 if(textDisplay != null){
@@ -106,18 +110,20 @@ if(inputColor != null){
     inputColor.addEventListener("click", timerColor);
 }
 
-function setColor(){
-    readbar.style.backgroundColor = inputColor.value;
+if(readbar != null){
+    function setColor(){
+        readbar.style.backgroundColor = inputColor.value;
+    }
+
+    var timerColor = setInterval(function(){ 
+                            setColor(); 
+                        }, 100  );
 }
 
-var timerColor = setInterval(function(){ 
-                        setColor(); 
-                    }, 100  );
-
 //readbar movement                    
-document.body.addEventListener("mousemove", getMousePosition);
+document.body.addEventListener("mousemove", moveReadbar);
 
-function getMousePosition(mouseEvent){
+function moveReadbar(mouseEvent){
     if (mouseEvent){    //modern browser
         cursorY = mouseEvent.pageY;
     }else{              //IE
@@ -149,10 +155,13 @@ function setURL(){
     var checkURL    = validURL(webURL);
 
     if(checkURL){
-        console.log("Yea");
+        removeClass("#web-display", "d-none");
+        addClass("#web-placeholder", "d-none");
+        addClass("#web-error    ", "d-none");
     }else{
-        
-        console.log("fuk");
+        removeClass("#web-error", "d-none");
+        addClass("#web-placeholder", "d-none");
+        addClass("#web-display", "d-none");
     }
 }
 
@@ -165,4 +174,34 @@ function validURL(str) {
       '(\\?[;&a-z\\d%_.~+=-]*)?'+ // query string
       '(\\#[-a-z\\d_]*)?$','i'); // fragment locator
     return !!pattern.test(str);
-  }
+}
+
+//****************************************GLOBAL FUNCTION
+//check if class or id
+function type(elementName){
+    var name = "";
+    var type = elementName.split("");
+    for(var i = 1; i < type.length; i++){
+        name = name + type[i];
+    }
+    if(type[0] == "#"){ //if id
+        return document.getElementById(name);   //return id
+    }else if(type[0] == "."){ //if class
+        return document.getElementsByClassName(name); //return class
+    }
+}
+
+//add class
+function addClass(elementName, classElement) {
+    var element = type(elementName);
+    var arr     = element.className.split(" ");
+    if (arr.indexOf(classElement) == -1) {
+      element.className += " " + classElement;
+    }
+}
+
+//remove class
+function removeClass(elementName, classElement) {
+    var element = type(elementName);
+    element.className = element.className.replace(classElement, "");
+}

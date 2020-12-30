@@ -19,9 +19,7 @@
 
         <title>Dyslexer - Web</title>
     </head>
-    <body>
-        <div id="bar" class="position-absolute"></div>
-        
+    <body>        
         <nav id="navbar" class="navbar container-fluid border-bottom position-relative">     
             <a href="index.html"><img src="img/logo-sm.png" alt="" class="float-left"></a>
             <div class="input-group">
@@ -32,33 +30,16 @@
                 <i class="fas fa-ellipsis-v"></i>
             </button>
         </nav>
-        
-
-        <div id="setting" class="position-absolute">
-            <button id="btn-overlay" type="button" class="mb-1">
-                <i class="fas fa-glasses"></i>
-            </button>
-            <br>
-            <input id="input-color" type="color" class="input-color mb-3" name="text-color" value="#C0C0C0">
-            <br>
-            <div class="btn-group-vertical" role="group" aria-label="Button">
-                <button id="btn-increase" type="button" class="btn btn-outline-primary btn-menu">
-                    A<i class="fas fa-long-arrow-alt-up"></i>
-                </button>
-                <button id="btn-decrease" type="button" class="btn btn-outline-primary btn-menu">
-                    A<i class="fas fa-long-arrow-alt-down"></i>
-                </button>
-            </div>
-        </div>
 
         <div id="display">
-            <!-- <div id="placeholder" class="placeholder d-flex">
+            <div id="web-placeholder" class="placeholder d-flex">
                 <p class="justify-content-center align-self-center mx-auto">Enter url to proceed.</p>
-            </div> -->
-            <!-- <div id="error" class="placeholder d-flex">
+            </div>
+            <div id="web-error" class="placeholder d-flex d-none">
                 <p class="justify-content-center align-self-center mx-auto">Please enter a valid URL!</p>
-            </div> -->
-            <iframe is="x-frame-bypass" src="https://twitter.com/" id="web-display" class="web-display"></iframe>
+            </div>
+            <iframe id="web-display" class="web-display d-none"></iframe>
+            <!-- <iframe src="https://brittanychiang.com/" id="web-display" class="web-display"></iframe> -->
         </div>
 
         <!-- Bootstrap JS CDN -->
