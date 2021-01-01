@@ -157,7 +157,11 @@ function setURL(){
     if(checkURL){
         removeClass("#web-display", "d-none");
         addClass("#web-placeholder", "d-none");
-        addClass("#web-error    ", "d-none");
+        addClass("#web-error", "d-none");
+        var senddata = {
+                            url: $webURL
+                        }
+        
     }else{
         removeClass("#web-error", "d-none");
         addClass("#web-placeholder", "d-none");
