@@ -108,7 +108,7 @@ html body #navbar .input-group {
 html body #readbar {
   background-color: #C0C0C0;
   height: 40px;
-  z-index: 200;
+  z-index: 300;
   width: 100%;
   opacity: 0.25;
 }
@@ -156,7 +156,6 @@ html body #setting .btn-menu:hover {
 html body #display {
   height: calc(100% - 55px);
   background-color: transparent;
-  z-index: 300;
 }
 
 html body #display .text-input {
@@ -165,7 +164,6 @@ html body #display .text-input {
   border: none;
   resize: none;
   padding: 15px;
-  background-color: transparent;
 }
 
 html body #display .text-input:focus {
